@@ -5,7 +5,7 @@ from sql_queries import create_table_queries, drop_table_queries
 def create_database():
     """
     - Creates and connects to the sparkifydb
-    - Returns the connection and cursor to sparkifydb
+    - Returns: connection and cursor to new database
     """
     
     # connect to default database
@@ -30,6 +30,7 @@ def create_database():
 def drop_tables(cur, conn):
     """
     Drops each table using the queries in `drop_table_queries` list.
+    Returns: Nothing
     """
     for query in drop_table_queries:
         cur.execute(query)
